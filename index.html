@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অনলাইন শপ - ক্যাশ অন ডেলিভারি</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f8; margin: 0; padding: 15px; color: #333; }
+    .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #2c3e50; margin-top: 0; }
+    .product-card { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+    .product-card img { max-width: 100%; height: auto; border-radius: 8px; max-height: 250px; }
+    .product-title { font-size: 18px; font-weight: bold; margin: 10px 0 5px; }
+    .price { color: #e74c3c; font-size: 18px; font-weight: bold; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 14px; }
+    .btn-submit { background-color: #27ae60; color: white; border: none; padding: 12px; width: 100%; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; }
+    .btn-submit:hover { background-color: #219150; }
+    .badge { background: #e67e22; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>অর্ডার ফর্ম</h2>
+  <div style="text-align: center;"><span class="badge">ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে টাকা দিন)</span></div>
+
+  <div class="product-card">
+    <img src="1787818581464.jpg" alt="Product Image">
+    <div class="product-title">বেবি ট্রাইসাইকেল / কিডস সাইকেল</div>
+    <div class="price">মূল্য: ৳ ২,৫০০ (উদাহরণ)</div>
+  </div>
+
+  <form action="https://formsubmit.co/fahimbiswas275@gmail.com" method="POST">
+    
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="নতুন ক্যাশ অন ডেলিভারি অর্ডার এসেছে!">
+
+    <div class="form-group">
+      <label for="product">প্রোডাক্ট সিলেক্ট করুন:</label>
+      <select id="product" name="Product" required>
+        <option value="Baby Tricycle - 2500 BDT">বেবি ট্রাইসাইকেল (৳ ২,৫০০)</option>
+        <option value="Black T-Shirt - 500 BDT">ব্ল্যাক টি-শার্ট (৳ ৫০০)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">আপনার পুরো নাম:</label>
+      <input type="text" id="name" name="Customer Name" placeholder="যেমন: মো: করিম" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">মোবাইল নম্বর:</label>
+      <input type="tel" id="phone" name="Phone Number" placeholder="যেমন: 017XXXXXXXX" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">ডেলিভারির সম্পূর্ণ ঠিকানা:</label>
+      <textarea id="address" name="Delivery Address" rows="3" placeholder="জেলা, থানা, গ্রাম/রোড নম্বর..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="note">কোনো বিশেষ নোট (ঐচ্ছিক):</label>
+      <input type="text" id="note" name="Special Note" placeholder="যেমন: লাল রঙের সাইকেল চাই">
+    </div>
+
+    <button type="submit" class="btn-submit">অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)</button>
+  </form>
+</div>
+
+</body>
+</html>
