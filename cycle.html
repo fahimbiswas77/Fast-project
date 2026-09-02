@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Tricycle Gallery & Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .main-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .thumbnail.active {
+            border-color: #007bff;
+        }
+        .order-form {
+            margin-top: 20px;
+        }
+        .order-form input, .order-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-form button {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img id="featured" class="main-image" src="1788373509304.jpg" alt="Baby Tricycle">
+
+    <div class="thumbnails">
+        <img class="thumbnail active" src="1788373509304.jpg" onclick="changeImage(this)">
+        <img class="thumbnail" src="1788373522866.jpg" onclick="changeImage(this)">
+        <img class="thumbnail" src="1788373808057.jpg" onclick="changeImage(this)">
+    </div>
+
+    <div class="order-form">
+        <h3>অর্ডার করার জন্য তথ্য দিন</h3>
+        <form>
+            <input type="hidden" id="selected_image" name="selected_image" value="1788373509304.jpg">
+
+            <input type="text" placeholder="আপনার নাম" required>
+            <input type="tel" placeholder="মোবাইল নম্বর" required>
+            <input type="text" placeholder="ঠিকানা" required>
+            <button type="submit">অর্ডার নিশ্চিত করুন</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function changeImage(element) {
+    // বড় ছবি পরিবর্তন
+    document.getElementById('featured').src = element.src;
+    
+    // সিলেক্ট হওয়া ছবির লিংক হিডেন ইনপুটে রাখা
+    document.getElementById('selected_image').value = element.src;
+
+    // একটিভ বর্ডার পরিবর্তন
+    let thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    element.classList.add('active');
+}
+</script>
+
+</body>
+</html>
