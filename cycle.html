@@ -75,12 +75,12 @@
 
     <div class="order-form">
         <h3>অর্ডার করার জন্য তথ্য দিন</h3>
-        <form>
+        <form onsubmit="sendToWhatsApp(event)">
             <input type="hidden" id="selected_image" name="selected_image" value="1788373509304.jpg">
 
-            <input type="text" placeholder="আপনার নাম" required>
-            <input type="tel" placeholder="মোবাইল নম্বর" required>
-            <input type="text" placeholder="ঠিকানা" required>
+            <input type="text" id="customer_name" placeholder="আপনার নাম" required>
+            <input type="tel" id="customer_phone" placeholder="মোবাইল নম্বর" required>
+            <input type="text" id="customer_address" placeholder="ঠিকানা" required>
             <button type="submit">অর্ডার নিশ্চিত করুন</button>
         </form>
     </div>
@@ -99,6 +99,25 @@ function changeImage(element) {
     thumbnails.forEach(thumb => thumb.classList.remove('active'));
     element.classList.add('active');
 }
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let myNumber = "8801812260908";
+
+    let name = document.getElementById('customer_name').value;
+    let phone = document.getElementById('customer_phone').value;
+    let address = document.getElementById('customer_address').value;
+    let image = document.getElementById('selected_image').value;
+
+    let message = `নতুন অর্ডার এসেছে!%0A` +
+                  `নাম: ${name}%0A` +
+                  `মোবাইল: ${phone}%0A` +
+                  `ঠিকানা: ${address}%0A` +
+                  `পছন্দকৃত ছবি: ${image}`;
+
+    let url = `https://wa.me/${myNumber}?text=${message}`;
+    window.open(url, '_blank');
+}  
 </script>
 
 </body>
