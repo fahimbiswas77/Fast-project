@@ -74,7 +74,7 @@
 
   <div class="order-form">
     <h3>অর্ডার করার জন্য তথ্য দিন</h3>
-    <form>
+    <form onsubmit="sendToWhatsApp(event)">
       <label for="size">সাইজ সিলেক্ট করুন:</label>
 <select id="size" name="size" required>
   <option value="">সাইজ বেছে নিন</option>
@@ -98,9 +98,9 @@
   <option value="Royal Blue">রয়্যাল ব্লু (Royal Blue)</option>
 </select>
 
-      <input type="text" placeholder="আপনার নাম" required>
-      <input type="tel" placeholder="মোবাইল নম্বর" required>
-      <input type="text" placeholder="ঠিকানা" required>
+      <input type="text" id="customer_name" placeholder="আপনার নাম" required>
+      <input type="tel" id="customer_phone" placeholder="মোবাইল নম্বর" required>
+      <input type="text" id="customer_address" placeholder="ঠিকানা" required>
       <button type="submit">অর্ডার নিশ্চিত করুন</button>
     </form>
   </div>
@@ -115,6 +115,27 @@
     thumbnails.forEach(thumb => thumb.classList.remove('active'));
     element.classList.add('active');
   }
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let myNumber = "8801612260908";
+
+    let name = document.getElementById('customer_name').value;
+    let phone = document.getElementById('customer_phone').value;
+    let address = document.getElementById('customer_address').value;
+    let size = document.getElementById('size').value;
+    let color = document.getElementById('color').value;
+
+    let message = `নতুন টি-শার্ট অর্ডার এসেছে!%0A` +
+                  `নাম: ${name}%0A` +
+                  `মোবাইল: ${phone}%0A` +
+                  `ঠিকানা: ${address}%0A` +
+                  `সাইজ: ${size}%0A` +
+                  `কালার: ${color}`;
+
+    let url = `https://wa.me/${myNumber}?text=${message}`;
+    window.open(url, '_blank');
+}
 </script>
 
 </body>
