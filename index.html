@@ -75,6 +75,29 @@
   <div class="order-form">
     <h3>অর্ডার করার জন্য তথ্য দিন</h3>
     <form>
+      <label for="size">সাইজ সিলেক্ট করুন:</label>
+<select id="size" name="size" required>
+  <option value="">সাইজ বেছে নিন</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+  <option value="XXL">XXL</option>
+  <option value="XXXL">XXXL</option>
+</select>
+
+<label for="color">কালার সিলেক্ট করুন:</label>
+<select id="color" name="color" required>
+  <option value="">কালার বেছে নিন</option>
+  <option value="Red">লাল (Red)</option>
+  <option value="Black">কালো (Black)</option>
+  <option value="White">সাদা (White)</option>
+  <option value="Blue">নীল (Blue)</option>
+  <option value="Green">সবুজ (Green)</option>
+  <option value="Purple">বেগুনি (Purple)</option>
+  <option value="Royal Blue">রয়্যাল ব্লু (Royal Blue)</option>
+</select>
+
       <input type="text" placeholder="আপনার নাম" required>
       <input type="tel" placeholder="মোবাইল নম্বর" required>
       <input type="text" placeholder="ঠিকানা" required>
@@ -82,7 +105,6 @@
     </form>
   </div>
 </div>
-
 <script>
   function changeImage(element) {
     // বড় ছবি পরিবর্তন
